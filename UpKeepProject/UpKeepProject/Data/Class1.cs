@@ -9,6 +9,6 @@ namespace UpKeepProject.Data
     class Class1
     {
 
-        global::System.Console.WriteLine(sut røv);
+        global::System.Console.WriteLine("sutFGDHNJMYK,LU.,KMJHNGHBGFVFDCSDFVBG røv");
     }
 }
