@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UpKeepProject.Data
-{
-    class Class1
-    {
 
-        global::System.Console.WriteLine("git DELETE DARA");
+namespace UpKeepProject.Data.Base
+{
+    public abstract class DomainClassAppBase : DomainClassBase
+    {
     }
 }

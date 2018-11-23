@@ -95,16 +95,21 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Class1.cs" />
+    <Compile Include="Data\Base\DomainClassAppBase.cs" />
+    <Compile Include="Data\Base\PersonBase.cs" />
+    <Compile Include="Data\Domain\Kunde.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Domain\Personale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\Persistency\UpkeepContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="efpt.config.json" />
     <None Include="UpKeepProject_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -128,13 +133,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer">
+      <Version>2.1.4</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.1.9</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Context\" />
-    <Folder Include="Data\Domain\" />
     <Folder Include="Model\" />
     <Folder Include="Viewmodel\" />
     <Folder Include="View\" />
