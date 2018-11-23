@@ -11,3 +11,5 @@ namespace UpKeepProject
         public int Nummer { get; set; }
     }
 }
+
+Console.WriteLine(SUB);
