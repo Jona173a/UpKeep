@@ -25,6 +25,7 @@ namespace UpKeepProject
         public MainPage()
         {
             this.InitializeComponent();
+            MainPageViewModel.SetAppFrame(AppFrame);
         }
     }
 }
