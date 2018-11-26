@@ -10,5 +10,31 @@
 
     <Grid>
 
+      <NavigationView Header="CleanPlus"
+                      SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}">
+        <NavigationView.MenuItems>
+          <NavigationViewItem Style="{...}" Icon="..." Content="File"
+                              Tag="OpenFileView"/>
+          <NavigationViewSeparator/>
+          <NavigationViewItem Style="{...}" Icon="..." Content="Personale"
+                              Tag="OpenKundeView"/>
+          <NavigationViewItem Style="{...}" Icon="..." Content="Kunde"
+                    Tag="OpenKundeView"/>
+        </NavigationView.MenuItems>
+
+        <Frame x:Name="AppFrame">
+          <Frame.ContentTransitions>
+            <TransitionCollection>
+              <NavigationThemeTransition/>
+            </TransitionCollection>
+          </Frame.ContentTransitions>
+        </Frame>
+      
+      
+      
+      
+      
+      
+      </NavigationView>
     </Grid>
 </Page>
