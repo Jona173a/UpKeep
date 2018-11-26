@@ -95,6 +95,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Command\App\CreateCommand .cs" />
+    <Compile Include="Command\App\DeleteCommand .cs" />
+    <Compile Include="Command\App\NavigationCommand.cs" />
+    <Compile Include="Command\Base\CommandBase.cs" />
+    <Compile Include="Command\Base\CRUDCommandBase.cs" />
+    <Compile Include="Command\Base\INotifiableCommand.cs" />
     <Compile Include="Data\Base\DomainClassAppBase.cs" />
     <Compile Include="Data\Base\PersonBase.cs" />
     <Compile Include="Data\Domain\Kunde.cs" />
