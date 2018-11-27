@@ -1,0 +1,54 @@
+<page>
+    x:Class="UpKeep.View.Domain.KundeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UpKeep.ViewModel.Page"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <local:KundeViewModel/>
+    </Page.DataContext>
+    
+    <Page.Resources>
+        <Style x:Key="TextBlockDetailsStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10,10,10,10"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListView Grid.Column="0" Grid.Row="0"
+                  ItemsSource="{Binding ItemCollection}"
+                  SelectedItem="{Binding ItemSelected, Mode=TwoWay}">
+        </ListView>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
+         // Lav Databindings her
+        </StackPanel>
+    </Grid>
+</Page>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</page>
