@@ -95,15 +95,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Base\DomainClassAppBase.cs" />
+    <Compile Include="Data\Logic\KundeLogic.cs" />
+    <Compile Include="Model\Base\CatalogEFBase.cs" />
+    <Compile Include="Data\Base\DomainClassBase.cs" />
+    <Compile Include="Data\Base\IDomainClass.cs" />
     <Compile Include="Data\Base\PersonBase.cs" />
     <Compile Include="Data\Domain\Kunde.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Domain\Personale.cs" />
+    <Compile Include="Model\App\DomainModel.cs" />
+    <Compile Include="Model\Base\CatalogAppBase.cs" />
+    <Compile Include="Model\Base\CatalogBase.cs" />
+    <Compile Include="Model\Base\ICatalog.cs" />
+    <Compile Include="Model\Catalog\KundeCatalog.cs" />
+    <Compile Include="Model\Catalog\PersonaleCatalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Data\Persistency\UpkeepContext.cs" />
+    <Compile Include="Data\Context\UpkeepContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -141,7 +150,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Viewmodel\" />
     <Folder Include="View\" />
   </ItemGroup>
