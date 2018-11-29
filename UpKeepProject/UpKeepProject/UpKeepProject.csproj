@@ -95,11 +95,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Base\IDomainClass.cs" />
     <Compile Include="Data\Logic\KundeLogic.cs" />
     <Compile Include="Model\Base\CatalogEFBase.cs" />
     <Compile Include="Data\Base\DomainClassBase.cs" />
-    <Compile Include="Data\Base\IDomainClass.cs" />
-    <Compile Include="Data\Base\PersonBase.cs" />
     <Compile Include="Data\Domain\Kunde.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

@@ -29,12 +29,12 @@ namespace UpKeepProject.Model.App
         {
             if (typeof(T)== typeof(Personale))
             {
-                return (ICatalog<T>) Instance.Personale;
+                return (ICatalog<T>) Instance.Personaler;
             }
         
             if (typeof(T) == typeof(Kunde))
             {
-                return (ICatalog<T>)Instance.Kunde;
+                return (ICatalog<T>)Instance.Kunder;
             }
 
             throw  new  ArgumentException($"Ingen Catalog fundt af den type {typeof(T)}");

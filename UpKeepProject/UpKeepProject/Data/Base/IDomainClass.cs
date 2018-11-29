@@ -7,5 +7,6 @@
         void SetId(int id);
 
         IDomainClass Copy();
+
     }
 }
