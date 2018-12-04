@@ -45,7 +45,7 @@ namespace UpKeepProject.Viewmodel.Base
             _allCommands.Add(PageViewModelState.Create, createCommands);
             _allCommands.Add(PageViewModelState.Update, updateCommands);
 
-            _viewStateChanged += OnViewStateChanged;
+            _viewStateChanged += OnViewStateHasChanged;
 
             SetState(PageViewModelState.ReadDelete);
         }
