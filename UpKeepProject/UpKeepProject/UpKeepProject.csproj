@@ -95,7 +95,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Command\App\CreateCommand.cs" />
+    <Compile Include="Command\App\DeleteCommand.cs" />
+    <Compile Include="Command\App\NavigationCommand.cs" />
+    <Compile Include="Command\App\SetViewStateCommand.cs" />
+    <Compile Include="Command\App\UpdateCommand.cs" />
+    <Compile Include="Command\Base\CommandBase.cs" />
+    <Compile Include="Command\Base\CRUDCommandBase.cs" />
+    <Compile Include="Command\Base\INotifableCommand.cs" />
     <Compile Include="Data\Base\IDomainClass.cs" />
+    <Compile Include="Data\Logic\PersonaleLogic.cs" />
     <Compile Include="Data\Logic\KundeLogic.cs" />
     <Compile Include="Model\Base\CatalogEFBase.cs" />
     <Compile Include="Data\Base\DomainClassBase.cs" />
@@ -112,6 +121,24 @@
     <Compile Include="Model\Catalog\PersonaleCatalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\Context\UpkeepContext.cs" />
+    <Compile Include="Viewmodel\App\MainPageViewModel.cs" />
+    <Compile Include="Viewmodel\Base\DataViewModelAppBase.cs" />
+    <Compile Include="Viewmodel\Base\DataViewModelBase.cs" />
+    <Compile Include="Viewmodel\Base\IDataViewModel.cs" />
+    <Compile Include="Viewmodel\Base\IPageViewModel.cs" />
+    <Compile Include="Viewmodel\Base\PageViewModelAppBase.cs" />
+    <Compile Include="Viewmodel\Base\PageViewModelBase.cs" />
+    <Compile Include="Viewmodel\Base\PageViewModelState.cs" />
+    <Compile Include="Viewmodel\Data\KundeDataViewModel.cs" />
+    <Compile Include="Viewmodel\Data\PersonaleDataViewModel.cs" />
+    <Compile Include="Viewmodel\Page\KundePageViewModel.cs" />
+    <Compile Include="Viewmodel\Page\PersonalePageViewModel.cs" />
+    <Compile Include="View\Domain\KundeView.xaml.cs">
+      <DependentUpon>KundeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\PersonaleView.xaml.cs">
+      <DependentUpon>PersonaleView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -139,6 +166,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\Domain\KundeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Domain\PersonaleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer">
@@ -148,10 +183,7 @@
       <Version>6.1.9</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Viewmodel\" />
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -5,10 +5,21 @@
     xmlns:local="using:UpKeepProject"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:app="using:UpKeepProject.Viewmodel.App"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Page.DataContext>
+        <app:MainPageViewModel/>
+    </Page.DataContext>
 
-    </Grid>
+    <NavigationView SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Overview" Tag="NEED TO BE MADE"/>
+            <NavigationViewItemSeparator/>
+            <NavigationViewItem Content="Personale" Tag="OpenPersonaleView"/>
+            <NavigationViewItem Content="Kunde" Tag="OpenKundeView"/>
+        </NavigationView.MenuItems>
+        <Frame x:Name="AppFrame"/>
+    </NavigationView>
 </Page>

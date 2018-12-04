@@ -1,8 +1,9 @@
 ﻿using UpKeepProject.Data.Base;
 
 namespace UpKeepProject
+
 {
-    public partial class Kunde : DomainClassBase
+    public partial class Personale : DomainClassBase
     {
         public override int GetId()
         {
