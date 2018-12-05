@@ -10,6 +10,16 @@ namespace UpKeepProject.Viewmodel
         {
         }
 
+        public int Id
+        {
+            get { return DataObject().Id; }
+            set
+            {
+                DataObject().Id = value;
+                OnPropertyChanged();
+            }
+        }
+
         public string Name
         {
             get { return DataObject().Name; }
@@ -44,7 +54,7 @@ namespace UpKeepProject.Viewmodel
 
         protected override string ItemDescription
         {
-            get { return $"{Name} {Adresse} {Nummer}"; }
+            get { return $"{Id} {Name} {Adresse} {Nummer}"; }
         }
 
     }
