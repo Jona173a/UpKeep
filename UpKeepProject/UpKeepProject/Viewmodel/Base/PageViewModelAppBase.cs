@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using UpKeepProject.Command;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
+using UpKeepProject.Command.App;
 using UpKeepProject.Command.Base;
 using UpKeepProject.Data.Base;
 using UpKeepProject.Model.App;
 using UpKeepProject.Model.Base;
+using UpKeepProject.Command;
 
 namespace UpKeepProject.Viewmodel.Base
 {
@@ -70,6 +73,11 @@ namespace UpKeepProject.Viewmodel.Base
                 if (_state == PageViewModelState.Update) header += "Update";
                 return header;
             }
+        }
+
+        public SolidColorBrush BackgroundColorDetails
+        {
+            get { return new SolidColorBrush(EnabledStateDetails ? Colors.White : Colors.GhostWhite); }
         }
 
         private Dictionary<string, CommandBase> CurrentCommands

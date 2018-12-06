@@ -16,8 +16,7 @@ namespace UpKeepProject.Command
         protected override void Execute()
         {
             T obj = _pageViewModel.ItemDetails.DataObject();
-            _catalog.Delete(obj.GetId());
-            _catalog.Create(obj);
+            _catalog.Update(obj.GetId(), obj);
         }
     }
 }

@@ -33,6 +33,12 @@
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="10,30,10,10"/>
+
+        </Style>
+        <Style x:Key="CreateButton" TargetType="Image">
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Source" Value="ms-appx:///Assets/Image/iconfinder_plus_172525.png" />
         </Style>
     </Page.Resources>
 
@@ -40,7 +46,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width=".5*"/>
+           
         </Grid.ColumnDefinitions>
         <ListView Grid.Column="0" Grid.Row="0"
                   ItemsSource="{Binding ItemCollection}"
@@ -50,42 +56,36 @@
 
         <Grid Grid.Column="0" Grid.Row="0" BorderThickness="5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".5*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
-                <TextBlock Text="Id" HorizontalAlignment="Center"
-                               Style="{StaticResource TextBlockDetailsStyle}"/>
 
-                <TextBox Text="{Binding ItemDetails.Id, Mode=TwoWay}"
-                             IsEnabled="{Binding EnabledStateDetails}"
+            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                <TextBlock Text="Name" HorizontalAlignment="Center"
+                               Style="{StaticResource TextBlockDetailsStyle}"/>
+                <TextBox Text="{Binding ItemDetails.Name, Mode=TwoWay}"
+                             IsHitTestVisible="{Binding EnabledStateDetails}"
+                             Background="{Binding BackgroundColorDetails}"
                              Style="{StaticResource TextBoxDetailsStyle}"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
-                <TextBlock Text="Name" HorizontalAlignment="Center"
+                <TextBlock Text="Adresse" HorizontalAlignment="Center"
                                Style="{StaticResource TextBlockDetailsStyle}"/>
-                <TextBox Text="{Binding ItemDetails.Name, Mode=TwoWay}"
-                             IsEnabled="{Binding EnabledStateDetails}"
+                <TextBox Text="{Binding ItemDetails.Adresse, Mode=TwoWay}"
+                             IsHitTestVisible="{Binding EnabledStateDetails}"
+                             Background="{Binding BackgroundColorDetails}"
                              Style="{StaticResource TextBoxDetailsStyle}"/>
             </StackPanel>
 
             <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical">
-                <TextBlock Text="Adresse" HorizontalAlignment="Center"
-                               Style="{StaticResource TextBlockDetailsStyle}"/>
-                <TextBox Text="{Binding ItemDetails.Adresse, Mode=TwoWay}"
-                             IsEnabled="{Binding EnabledStateDetails}"
-                             Style="{StaticResource TextBoxDetailsStyle}"/>
-            </StackPanel>
-
-            <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Vertical">
                 <TextBlock Text="Nummer" HorizontalAlignment="Center"
                                Style="{StaticResource TextBlockDetailsStyle}"/>
                 <TextBox Text="{Binding ItemDetails.Nummer, Mode=TwoWay}"
-                             IsEnabled="{Binding EnabledStateDetails}"
+                             IsHitTestVisible="{Binding EnabledStateDetails}"
+                             Background="{Binding BackgroundColorDetails}"
                              Style="{StaticResource TextBoxDetailsStyle}"/>
             </StackPanel>
         </Grid>
@@ -97,26 +97,34 @@
 
 
 
-
-        <Grid Grid.Column="1" Grid.Row="1">
+        <Grid Grid.Column="0" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
-                <Button Command="{Binding ViewCommandsObj[0]}" Content="{Binding ViewCommandsDesc[0]}"
-                            Style="{StaticResource ButtonStyle}" />
-                <Button Command="{Binding ViewCommandsObj[1]}" Content="{Binding ViewCommandsDesc[1]}"
-                            Style="{StaticResource ButtonStyle}" />
-                <Button Command="{Binding ViewCommandsObj[2]}" Content="{Binding ViewCommandsDesc[2]}"
-                            Style="{StaticResource ButtonStyle}" />
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
-                    Text="{Binding ViewStateDesc}" Style="{StaticResource TextBlockStateStyle}" />
+            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Button Command="{Binding ViewCommandsObj[0]}" 
+                        Content="{Binding ViewCommandsDesc[0]}"
+                        Style="{StaticResource ButtonStyle}"/>
+
+                <Button Command="{Binding ViewCommandsObj[1]}" 
+                        Content="{Binding ViewCommandsDesc[1]}"
+                        Style="{StaticResource ButtonStyle}"  />
+                
+                <Button Command="{Binding ViewCommandsObj[2]}" 
+                        Content="{Binding ViewCommandsDesc[2]}"
+                        Style="{StaticResource ButtonStyle}" />
+
+                <TextBlock Grid.Column="1" 
+                           Grid.Row="0" 
+                           VerticalAlignment="Bottom" 
+                           HorizontalAlignment="Center"
+                           
+                           Text="{Binding ViewStateDesc}" 
+                           Style="{StaticResource TextBlockStateStyle}" />
+
             </StackPanel>
-
-            
         </Grid>
-   
-
     </Grid>
 </Page>

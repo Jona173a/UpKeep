@@ -17,14 +17,17 @@ namespace UpKeepProject.Data.Base
             _dbContext = new  TDBContext();
         }
 
-        public override List<T> All
-        {
-            get { return BuildObjects(_dbContext.Set<T>()); }
-        }
         public override T Read(int id)
         {
             return All.Find(obj => (obj.GetId() == id));
         }
+
+        protected override List<T> AllFromSource()
+        {
+            return BuildObjects(_dbContext.Set<T>());
+        }
+
+
         protected override void Insert(T obj)
         {
             int id = All.Select(o => o.GetId()).Max() + 1;
@@ -40,6 +43,16 @@ namespace UpKeepProject.Data.Base
             if (obj != null)
             {
                 _dbContext.Set<T>().Remove(obj);
+                _dbContext.SaveChanges();
+            }
+        }
+
+        protected override void Revise(int id, T obj)
+        {
+            T oldObj = Read(id);
+            if (oldObj != null)
+            {
+                oldObj.CopyValuesFrom(obj);
                 _dbContext.SaveChanges();
             }
         }

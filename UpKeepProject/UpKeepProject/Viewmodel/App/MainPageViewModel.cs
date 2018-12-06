@@ -36,6 +36,7 @@ namespace UpKeepProject.Viewmodel.App
 
             }
         }
+
         public static void SetAppFrame(Frame appFrame)
         {
             _appFrame = appFrame;

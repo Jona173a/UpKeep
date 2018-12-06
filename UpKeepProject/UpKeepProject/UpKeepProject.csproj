@@ -98,6 +98,8 @@
     <Compile Include="Command\App\CreateCommand.cs" />
     <Compile Include="Command\App\DeleteCommand.cs" />
     <Compile Include="Command\App\NavigationCommand.cs" />
+    <Compile Include="Command\App\NotImplementedCommand.cs" />
+    <Compile Include="Command\App\ReferenceChangeCommand.cs" />
     <Compile Include="Command\App\SetViewStateCommand.cs" />
     <Compile Include="Command\App\UpdateCommand.cs" />
     <Compile Include="Command\Base\CommandBase.cs" />
@@ -148,6 +150,9 @@
     <None Include="UpKeepProject_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Image\iconfinder_plus_172525.png" />
+    <Content Include="Assets\Image\iconfinder_trash_172607.png" />
+    <Content Include="Assets\Image\iconfinder_update_172618.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
