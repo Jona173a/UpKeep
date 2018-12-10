@@ -5,6 +5,16 @@ namespace UpKeepProject.Viewmodel
     public class KundeDataViewModel : DataViewModelAppBase<Kunde>
     {
 
+        public int Id
+        {
+            get { return DataObject().Id; }
+            set
+            {
+                DataObject().Id = value;
+                OnPropertyChanged();
+            }
+        }
+
         public string Name
         {
             get { return DataObject().Name; }
@@ -25,12 +35,12 @@ namespace UpKeepProject.Viewmodel
             }
         }
 
-        public string Nummer
+        public int Nummer
         {
-            get { return DataObject().Adresse; }
+            get { return DataObject().Nummer; }
             set
             {
-                DataObject().Adresse = value;
+                DataObject().Nummer = value;
                 OnPropertyChanged();
             }
         }
@@ -39,7 +49,7 @@ namespace UpKeepProject.Viewmodel
 
         protected override string ItemDescription
         {
-            get { return $" {Name} {Adresse} {Nummer}"; }
+            get { return $"{Id} {Name} {Adresse} {Nummer}"; }
         }
 
     }

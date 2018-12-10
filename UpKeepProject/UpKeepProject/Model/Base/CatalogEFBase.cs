@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using UpKeepProject.Model.Base;
 using UpKeepProject.Data.Base;
 
-namespace UpKeepProject.Data.Base
+namespace UpKeepProject.Model.Base
 {
     public abstract class CatalogEFBase<T, TDBContext> : CatalogBase<T>
         where TDBContext : DbContext, new()
@@ -30,8 +29,11 @@ namespace UpKeepProject.Data.Base
 
         protected override void Insert(T obj)
         {
-            int id = All.Select(o => o.GetId()).Max() + 1;
+            var query = All.Select(o => o.GetId());
+            //int id = All.Select(o => o.GetId()).Max() + 1;
+            int id = query.Count() == 0 ? 1 : query.Max()+1;
             obj.SetId(id);
+            
 
             _dbContext.Set<T>().Add(obj);
             _dbContext.SaveChanges();

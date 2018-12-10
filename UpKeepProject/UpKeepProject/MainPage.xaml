@@ -15,7 +15,6 @@
 
     <NavigationView SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}">
         <NavigationView.MenuItems>
-            <NavigationViewItem Content="Kunde" Tag="OpenPersonaleView"></NavigationViewItem>
             <NavigationViewItem Content="Personale" Tag="OpenPersonaleView"/>
             <NavigationViewItem Content="Kunde" Tag="OpenKundeView"/>
         </NavigationView.MenuItems>
