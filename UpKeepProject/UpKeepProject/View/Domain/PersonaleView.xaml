@@ -61,49 +61,37 @@
 
         <Grid Grid.Column="0" Grid.Row="0" BorderThickness="5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".5*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
-                <TextBlock Text="ID" HorizontalAlignment="Center"
+                <TextBlock Text="Name" HorizontalAlignment="Center"
                            Style="{StaticResource TextBlockDetailsStyle}"/>
-                <TextBox Text="{Binding ItemDetails.Id, Mode=TwoWay}"
+                <TextBox Text="{Binding ItemDetails.Name, Mode=TwoWay}"
                          IsHitTestVisible="{Binding EnabledStateDetails}"
                          Background="{Binding BackgroundColorDetails}"
                          Style="{StaticResource TextBoxDetailsStyle}"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
-                <TextBlock Text="Name" HorizontalAlignment="Center"
-                               Style="{StaticResource TextBlockDetailsStyle}"/>
-                <TextBox Text="{Binding ItemDetails.Name, Mode=TwoWay}"
-                             IsHitTestVisible="{Binding EnabledStateDetails}"
-                             Background="{Binding BackgroundColorDetails}"
-                             Style="{StaticResource TextBoxDetailsStyle}"/>
+                <TextBlock Text="Adresse" HorizontalAlignment="Center"
+                           Style="{StaticResource TextBlockDetailsStyle}"/>
+                <TextBox Text="{Binding ItemDetails.Adresse, Mode=TwoWay}"
+                         IsHitTestVisible="{Binding EnabledStateDetails}"
+                         Background="{Binding BackgroundColorDetails}"
+                         Style="{StaticResource TextBoxDetailsStyle}"/>
             </StackPanel>
 
             <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical">
-                <TextBlock Text="Adresse" HorizontalAlignment="Center"
-                               Style="{StaticResource TextBlockDetailsStyle}"/>
-                <TextBox Text="{Binding ItemDetails.Adresse, Mode=TwoWay}"
-                             IsHitTestVisible="{Binding EnabledStateDetails}"
-                             Background="{Binding BackgroundColorDetails}"
-                             Style="{StaticResource TextBoxDetailsStyle}"/>
-            </StackPanel>
-
-            <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Vertical">
                 <TextBlock Text="Nummer" HorizontalAlignment="Center"
-                               Style="{StaticResource TextBlockDetailsStyle}"/>
+                           Style="{StaticResource TextBlockDetailsStyle}"/>
                 <TextBox Text="{Binding ItemDetails.Nummer, Mode=TwoWay}"
-                             IsHitTestVisible="{Binding EnabledStateDetails}"
-                             Background="{Binding BackgroundColorDetails}"
-                             Style="{StaticResource TextBoxDetailsStyle}"/>
+                         IsHitTestVisible="{Binding EnabledStateDetails}"
+                         Background="{Binding BackgroundColorDetails}"
+                         Style="{StaticResource TextBoxDetailsStyle}"/>
             </StackPanel>
-
-          
         </Grid>
 
 
@@ -253,14 +241,7 @@
                         Style="{StaticResource ButtonStyle}"
                         >
 
-                    <Button.ContentTemplate>
-                        <DataTemplate>
-                            <Image Source="../../Assets/Image/iconfinder_plus_172525.png"
-                                   Width="20"
-                                   Height="20"/>
-                        </DataTemplate>
 
-                    </Button.ContentTemplate>
                 </Button>
 
                 <Button Command="{Binding ViewCommandsObj[1]}" 
@@ -271,8 +252,7 @@
                         Content="{Binding ViewCommandsDesc[2]}"
                         Style="{StaticResource ButtonStyle}" />
 
-                <TextBlock Grid.Column="1" 
-                           Grid.Row="0" 
+                <TextBlock 
                            VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center"
                            

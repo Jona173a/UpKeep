@@ -150,6 +150,8 @@
     <None Include="UpKeepProject_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Image\cleanplus-logo-alm.png" />
+    <Content Include="Assets\Image\cplogo-bund.png" />
     <Content Include="Assets\Image\iconfinder_plus_172525.png" />
     <Content Include="Assets\Image\iconfinder_trash_172607.png" />
     <Content Include="Assets\Image\iconfinder_update_172618.png" />

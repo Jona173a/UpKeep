@@ -1,4 +1,6 @@
-﻿using UpKeepProject.Viewmodel.Base;
+﻿using System.Runtime.Serialization.Formatters;
+using UpKeepProject.Command;
+using UpKeepProject.Viewmodel.Base;
 
 namespace UpKeepProject.Viewmodel
 {
@@ -45,6 +47,7 @@ namespace UpKeepProject.Viewmodel
             }
         }
 
+        
 
 
         protected override string ItemDescription

@@ -13,11 +13,21 @@
         <local:MainPageViewModel/>
     </Page.DataContext>
 
+
+
+
     <NavigationView SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}">
         <NavigationView.MenuItems>
+            <Image Source="Assets/Image/cleanplus-logo-alm.png"
+                   Margin="60,0,0,0"/>
             <NavigationViewItem Content="Personale" Tag="OpenPersonaleView"/>
-            <NavigationViewItem Content="Kunde" Tag="OpenKundeView"/>
+            <NavigationViewItem Icon="People"  Content="Kunde" Tag="OpenKundeView"/>
         </NavigationView.MenuItems>
         <Frame x:Name="AppFrame"/>
     </NavigationView>
+    
+ 
+ 
+
+
 </Page>
