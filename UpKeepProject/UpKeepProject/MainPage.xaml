@@ -13,23 +13,48 @@
         <local:MainPageViewModel/>
     </Page.DataContext>
 
-
-
-
-    <NavigationView SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}">
-       
+    <Grid Grid.ColumnSpan="3" Grid.RowSpan="3">
+        <NavigationView SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}">
 
             <NavigationView.MenuItems>
-            <Image Source="Assets/Image/cleanplus-logo-alm.png"
-                   Margin="60,0,0,0"/>
-            <NavigationViewItem Icon="People" Content="Personale" Tag="OpenPersonaleView"/>
-            <NavigationViewItem Icon="Contact"  Content="Kunde" Tag="OpenKundeView"/>
-        </NavigationView.MenuItems>
-        <Frame x:Name="AppFrame"/>
-    </NavigationView>
-    
- 
- 
+                <NavigationViewItem Icon="Home" Content="Hjem" Tag="OpenForsideView"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="People" Content="Personale" Tag="OpenPersonaleView"/>
+                <NavigationViewItem Icon="Contact"  Content="Kunde" Tag="OpenKundeView"/>
+            </NavigationView.MenuItems>
 
+            <Frame x:Name="AppFrame">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
 
+                    <Grid Grid.Column="2" Grid.Row="0">
+                        <Image Source=" ms-appx:///Assets/Image/Black.png"
+                               Height="120"
+                               Width="600"/>
+                    </Grid>
+
+                    <Grid Grid.Column="2" Grid.Row="1">
+                        <TextBlock Text="Velkommen til UpKeep"
+                                   FontSize="30"
+                                   Foreground="#30333F"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top" Margin="0,60,0,0">
+                        </TextBlock>
+                        <TextBlock Text="Managing never done easier"
+                                   FontSize="28"
+                                   FontStyle="Italic"
+                                   Foreground="#30333F"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top" 
+                                   Margin="0,90,0,0">
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Frame>
+        </NavigationView>
+    </Grid>
 </Page>

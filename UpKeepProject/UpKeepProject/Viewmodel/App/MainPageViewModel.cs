@@ -48,6 +48,7 @@ namespace UpKeepProject.Viewmodel.App
         {
             _navigationCommands.Add("OpenPersonaleView", CreateNavigationCommand(typeof(PersonaleView)));
             _navigationCommands.Add("OpenKundeView", CreateNavigationCommand(typeof(KundeView)));
+            _navigationCommands.Add("OpenForsideView", CreateNavigationCommand(typeof(ForsideView)));
         }
 
         private static NavigationCommand CreateNavigationCommand(Type viewType)

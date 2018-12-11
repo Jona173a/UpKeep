@@ -135,6 +135,9 @@
     <Compile Include="Viewmodel\Data\PersonaleDataViewModel.cs" />
     <Compile Include="Viewmodel\Page\KundePageViewModel.cs" />
     <Compile Include="Viewmodel\Page\PersonalePageViewModel.cs" />
+    <Compile Include="View\Domain\ForsideView.xaml.cs">
+      <DependentUpon>ForsideView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Domain\KundeView.xaml.cs">
       <DependentUpon>KundeView.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,7 @@
     <None Include="UpKeepProject_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Image\Black.png" />
     <Content Include="Assets\Image\cleanplus-logo-alm.png" />
     <Content Include="Assets\Image\cplogo-bund.png" />
     <Content Include="Assets\Image\iconfinder_plus_172525.png" />
@@ -163,6 +167,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Spørgsmål.txt" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -172,6 +177,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Domain\ForsideView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Domain\KundeView.xaml">
       <SubType>Designer</SubType>
