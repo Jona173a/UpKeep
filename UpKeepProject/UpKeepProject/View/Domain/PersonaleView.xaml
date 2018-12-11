@@ -40,14 +40,23 @@
             <Setter Property="Height" Value="50"/>
             <Setter Property="Source" Value="ms-appx:///Assets/Image/iconfinder_plus_172525.png" />
         </Style>
+        <Style x:Key="TextSizingforMiddelPart" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+
+        </Style>
     </Page.Resources>
 
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
 
-        </Grid.ColumnDefinitions>
+
 
 
         <Grid Grid.Column="0" Grid.Row="0" BorderThickness="5">
@@ -94,21 +103,75 @@
                              Style="{StaticResource TextBoxDetailsStyle}"/>
             </StackPanel>
 
-            <ListView Grid.Column="0" Grid.Row="0"
-                      ItemsSource="{Binding ItemCollection}"
-                      SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
-                      IsEnabled="{Binding EnabledStateCollection}">
-            </ListView>
+          
         </Grid>
 
 
-
-
-
-
-
-
         <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                <TextBlock Text="ID" 
+                           Style="{StaticResource TextSizingforMiddelPart}"
+                           HorizontalAlignment="Center"/>
+                
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                <ListView
+                    ItemsSource="{Binding ItemCollection}"
+                    SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
+                    IsEnabled="{Binding EnabledStateCollection}"
+                    HorizontalAlignment="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Id}" 
+                                       FontSize="24">
+                            </TextBlock>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Grid>
+
+
+        <!--<ListView Grid.Column="0" Grid.Row="2"
+                      
+                      ItemsSource="{Binding ItemCollection}"
+                      SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
+                      IsEnabled="{Binding EnabledStateCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ItemDescription2}" FontSize="24">
+                      
+                    </TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>-->
+       
+
+
+
+
+
+
+        <Grid Grid.Column="0" Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="2*"/>
@@ -117,7 +180,16 @@
             <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom">
                 <Button Command="{Binding ViewCommandsObj[0]}" 
                         Content="{Binding ViewCommandsDesc[0]}"
-                        Style="{StaticResource ButtonStyle}"/>
+                        Style="{StaticResource ButtonStyle}"
+                        >
+
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <Image Source="../../Assets/Image/iconfinder_plus_172525.png"/>
+                        </DataTemplate>
+
+                    </Button.ContentTemplate>
+                </Button>
 
                 <Button Command="{Binding ViewCommandsObj[1]}" 
                         Content="{Binding ViewCommandsDesc[1]}"

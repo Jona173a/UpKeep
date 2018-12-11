@@ -51,5 +51,10 @@ namespace UpKeepProject.Viewmodel
             get { return $"{Id} {Name} {Adresse} {Nummer}"; }
         }
 
+        public  string ItemDescription2
+        {
+            get { return $"{Id} {Name} {Adresse} {Nummer}"; }
+        }
+
     }
 }
