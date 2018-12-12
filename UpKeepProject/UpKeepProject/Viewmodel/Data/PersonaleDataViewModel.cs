@@ -4,10 +4,14 @@ namespace UpKeepProject.Viewmodel
 {
     public class PersonaleDataViewModel : DataViewModelAppBase<Personale>
     {
-        public PersonaleDataViewModel() { }
-
-        public PersonaleDataViewModel(Personale dataObject) : base(dataObject)
+        public int Id
         {
+            get { return DataObject().Id; }
+            set
+            {
+                DataObject().Id = value;
+                OnPropertyChanged();
+            }
         }
 
         public string Name
@@ -30,12 +34,12 @@ namespace UpKeepProject.Viewmodel
             }
         }
 
-        public string Nummer
+        public int Nummer
         {
-            get { return DataObject().Adresse; }
+            get { return DataObject().Nummer; }
             set
             {
-                DataObject().Adresse = value;
+                DataObject().Nummer= value;
                 OnPropertyChanged();
             }
         }
@@ -44,7 +48,12 @@ namespace UpKeepProject.Viewmodel
 
         protected override string ItemDescription
         {
-            get { return $"{Name} {Adresse} {Nummer}"; }
+            get { return $"{Id} {Name} {Adresse} {Nummer}"; }
+        }
+
+        public  string ItemDescription2
+        {
+            get { return $"{Id} {Name} {Adresse} {Nummer}"; }
         }
 
     }

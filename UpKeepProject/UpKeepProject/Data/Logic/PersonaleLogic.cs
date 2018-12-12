@@ -3,7 +3,7 @@
 namespace UpKeepProject
 
 {
-    public partial class Personale : DomainClassBase
+    public partial class Personale : DomainClassBase<Personale>
     {
         public override int GetId()
         {
@@ -13,6 +13,12 @@ namespace UpKeepProject
         public override void SetId(int id)
         {
             Id = id;
+        }
+        public override void CopyValuesFromObj(Personale obj)
+        {
+            Name = obj.Name;
+            Adresse = obj.Adresse;
+            Nummer = obj.Nummer;
         }
     }
 }

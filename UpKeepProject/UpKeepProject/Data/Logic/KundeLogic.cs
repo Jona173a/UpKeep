@@ -2,7 +2,7 @@
 
 namespace UpKeepProject
 {
-    public partial class Kunde : DomainClassBase
+    public partial class Kunde : DomainClassBase<Kunde>
     {
         public override int GetId()
         {
@@ -13,5 +13,14 @@ namespace UpKeepProject
         {
             Id = id;
         }
+
+        public override void CopyValuesFromObj(Kunde obj)
+        {
+            Name = obj.Name;
+            Adresse = obj.Adresse;
+            Nummer = obj.Nummer;
+        }
+
+        
     }
 }
