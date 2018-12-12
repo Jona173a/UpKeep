@@ -185,9 +185,7 @@
                     HorizontalAlignment="Left">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Adresse}" 
-                                       FontSize="24">
-                                </TextBlock>
+                                <TextBlock Text="{Binding Adresse}" Style="{StaticResource TextForAddedText}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
@@ -202,9 +200,7 @@
                     HorizontalAlignment="Left">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Nummer}" 
-                                       FontSize="24">
-                                </TextBlock>
+                                <TextBlock Text="{Binding Nummer}" Style="{StaticResource TextForAddedText}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

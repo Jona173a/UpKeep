@@ -17,6 +17,7 @@
         <NavigationView SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}">
 
             <NavigationView.MenuItems>
+     
                 <NavigationViewItem Icon="Home" Content="Hjem" Tag="OpenForsideView"/>
                 <NavigationViewItemSeparator/>
                 <NavigationViewItem Icon="People" Content="Personale" Tag="OpenPersonaleView"/>
