@@ -9,10 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.DataContext>
-         <local:PersonalePageViewModel></local:PersonalePageViewModel>
+        <local:PersonalePageViewModel/>
     </Page.DataContext>
 
-    <!--#region Resources-->
+            <!--#region Resources-->
     <Page.Resources>
         <Style x:Key="TextBlockStateStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"/>
@@ -23,6 +23,7 @@
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Foreground" Value="#30333F"/>
         </Style>
         <Style x:Key="TextBoxDetailsStyle" TargetType="TextBox">
             <Setter Property="FontSize" Value="24"/>
@@ -43,10 +44,14 @@
         <Style x:Key="TextSizingforMiddelPart" TargetType="TextBlock">
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#30333F"/>
+        </Style>
+        <Style x:Key="TextForAddedText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="#30333F"/>
         </Style>
     </Page.Resources>
     <!--#endregion-->
-
     
         <Grid>
             <Grid.RowDefinitions>
@@ -150,15 +155,13 @@
                     HorizontalAlignment="Center">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Id}" 
-                                       FontSize="24"
-                                       >
-                                </TextBlock>
+                                <TextBlock Text="{Binding Id}" Style="{StaticResource TextForAddedText}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
 
+                <!-- Name Data -->
                 <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
                     <ListView
                     ItemsSource="{Binding ItemCollection}"
@@ -167,14 +170,13 @@
                     HorizontalAlignment="Left">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Name}" 
-                                       FontSize="24">
-                                </TextBlock>
+                                <TextBlock Text="{Binding Name}" Style="{StaticResource TextForAddedText}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
 
+                <!-- Adresse Data -->
                 <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical">
                     <ListView
                     ItemsSource="{Binding ItemCollection}"
@@ -191,6 +193,7 @@
                     </ListView>
                 </StackPanel>
 
+                <!-- Nummer Data -->
                 <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Vertical">
                     <ListView
                     ItemsSource="{Binding ItemCollection}"
@@ -241,7 +244,5 @@
                 </StackPanel>
             </Grid>
             <!--#endregion-->
-
         </Grid>
-    
 </Page>

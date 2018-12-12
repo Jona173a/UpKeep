@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.DataContext>
-        <local:KundePageViewModel></local:KundePageViewModel>
+        <local:KundePageViewModel/>
     </Page.DataContext>
 
     <!--#region Resources-->
@@ -23,17 +23,18 @@
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Foreground" Value="#30333F"/>
         </Style>
         <Style x:Key="TextBoxDetailsStyle" TargetType="TextBox">
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Foreground" Value="#30333F"/>
         </Style>
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="10,30,10,10"/>
-
         </Style>
         <Style x:Key="CreateButton" TargetType="Image">
             <Setter Property="Width" Value="50"/>
@@ -43,22 +44,24 @@
         <Style x:Key="TextSizingforMiddelPart" TargetType="TextBlock">
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#30333F"/>
+        </Style>
+        <Style x:Key="TextForAddedText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="#30333F"/>
         </Style>
     </Page.Resources>
     <!--#endregion-->
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
-        <Grid>
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height=".75*"/>
             <RowDefinition Height=".2*"/>
             <RowDefinition Height="3*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
 
-
-
-        <!--#region TopPart-->
+        <!--#region Top Part-->
         <Grid Grid.Column="0" Grid.Row="0" BorderThickness="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
@@ -95,7 +98,7 @@
         </Grid>
         <!--#endregion-->
 
-        <!--#region MiddelPart-->
+        <!--#region Middel Part Text-->
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".5*"/>
@@ -132,102 +135,85 @@
             </StackPanel>
         </Grid>
         <!--#endregion-->
-        
 
-       
-        <Grid Grid.Column="0" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".5*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="5*"/>
-            </Grid.ColumnDefinitions>
+        <!--#region Middel Part-->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2">
+            <Grid Grid.Column="0" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- ID Data -->
-            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
-                <ListView
+                <!-- ID Data -->
+                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                    <ListView
                     ItemsSource="{Binding ItemCollection}"
                     SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
                     IsEnabled="{Binding EnabledStateCollection}"
                     HorizontalAlignment="Center">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Id}" 
-                                       FontSize="24"
-                                       >
-                            </TextBlock>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Id}" Style="{StaticResource TextForAddedText}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
 
-            <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
-                <ListView
+                <!-- Name Data -->
+                <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
+                    <ListView
                     ItemsSource="{Binding ItemCollection}"
                     SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
                     IsEnabled="{Binding EnabledStateCollection}"
                     HorizontalAlignment="Left">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Name}" 
-                                       FontSize="24">
-                            </TextBlock>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" Style="{StaticResource TextForAddedText}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
 
-            <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical">
-                <ListView
+                <!-- Adresse Data -->
+                <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical">
+                    <ListView
                     ItemsSource="{Binding ItemCollection}"
                     SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
                     IsEnabled="{Binding EnabledStateCollection}"
                     HorizontalAlignment="Left">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Adresse}" 
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Adresse}" 
                                        FontSize="24">
-                            </TextBlock>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
 
-            <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Vertical">
-                <ListView
+                <!-- Nummer Data -->
+                <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Vertical">
+                    <ListView
                     ItemsSource="{Binding ItemCollection}"
                     SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
                     IsEnabled="{Binding EnabledStateCollection}"
                     HorizontalAlignment="Left">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Nummer}" 
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Nummer}" 
                                        FontSize="24">
-                            </TextBlock>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
-        </Grid>
-        
+                                </TextBlock>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+        <!--#endregion-->
 
-
-        <!--<ListView Grid.Column="0" Grid.Row="2"
-                      
-                      ItemsSource="{Binding ItemCollection}"
-                      SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
-                      IsEnabled="{Binding EnabledStateCollection}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding ItemDescription2}" FontSize="24">
-                      
-                    </TextBlock>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>-->
-
-        <!--#region BottomPart-->
+        <!--#region Bottom Part-->
         <Grid Grid.Column="0" Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
@@ -260,5 +246,4 @@
         <!--#endregion-->
         
     </Grid>
-    </ScrollViewer>
 </Page>
