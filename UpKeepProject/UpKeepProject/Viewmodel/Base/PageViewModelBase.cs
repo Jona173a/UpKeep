@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using UpKeepProject.Data.Base;
 using UpKeepProject.Model.Base;
+using UpKeepProject.Model.Catalog;
 
 namespace UpKeepProject.Viewmodel.Base
 {
@@ -38,6 +39,8 @@ namespace UpKeepProject.Viewmodel.Base
                 return new ObservableCollection<TDataViewModel>(collection);
             }
         }
+
+        
 
         public TDataViewModel ItemSelected
         {

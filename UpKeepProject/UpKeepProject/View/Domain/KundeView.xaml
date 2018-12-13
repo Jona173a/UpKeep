@@ -12,6 +12,8 @@
         <local:KundePageViewModel/>
     </Page.DataContext>
 
+    
+
     <!--#region Resources-->
     <Page.Resources>
         <Style x:Key="TextBlockStateStyle" TargetType="TextBlock">
@@ -162,6 +164,8 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
+
+                
 
                 <!-- Name Data -->
                 <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">

@@ -8,7 +8,7 @@ using UpKeepProject.Model.Catalog;
 
 namespace UnitTestProject2
 {
-    [TestClass]
+   
     [TestClass]
     public class KundeTest
     {

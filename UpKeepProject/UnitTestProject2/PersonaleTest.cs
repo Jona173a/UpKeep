@@ -49,7 +49,5 @@ namespace UnitTestProject2
                 //Assert
                 Assert.AreEqual(22373134, personale.Nummer);
             }
-        
-
     }
 }
