@@ -22,7 +22,10 @@ namespace UpKeepProject
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=upkeep2.database.windows.net;Initial Catalog=UpKeep;Persist Security Info=True;User ID=Basic;Password=Polo1234");
+                optionsBuilder.UseSqlServer("Data Source=upkeep2.database.windows.net;Initial " +
+                    "Catalog=UpKeep;Persist Security Info=True;User " +
+                    "ID=Basic;" +
+                    "Password=Polo1234");
             }
         }
 
