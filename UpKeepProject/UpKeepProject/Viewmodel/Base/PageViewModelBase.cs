@@ -35,8 +35,7 @@ namespace UpKeepProject.Viewmodel.Base
             get
             {
                 List<TDataViewModel> collection = _catalog.All.Select(CreateDataViewModel).ToList();
-                collection.Sort();
-                return new ObservableCollection<TDataViewModel>(collection);
+                return new ObservableCollection<TDataViewModel>(collection.OrderBy(model => model.DataObject().GetId()));
             }
         }
 

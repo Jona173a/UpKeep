@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Windows.UI.Xaml.Controls;
 using UpKeepProject.Viewmodel.Base;
 
 namespace UpKeepProject.Viewmodel.Page
@@ -30,5 +31,10 @@ namespace UpKeepProject.Viewmodel.Page
             }
         }
 
+
+        public List<KundeDataViewModel> SorList
+        {
+            get { return ItemCollection.OrderBy(j => j.Id).ToList(); }
+        }
     }
 }

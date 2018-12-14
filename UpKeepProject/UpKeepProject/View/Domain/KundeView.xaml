@@ -103,8 +103,11 @@
             </StackPanel>
         </Grid>
         <!--#endregion-->
+
+
         <Grid Grid.Column="0" Grid.Row="1">
-            <TextBox Text="{Binding FliterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Skriv Her"  />
+            <TextBox Text="{Binding FliterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     PlaceholderText="Skriv Her"  />
         </Grid>
 
         <!--#region Middel Part Text-->
