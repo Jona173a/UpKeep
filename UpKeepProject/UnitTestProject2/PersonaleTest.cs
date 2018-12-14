@@ -8,7 +8,7 @@ namespace UnitTestProject2
     public class PersonaleTest
     {
             [TestMethod]
-            public void TestKundeName()
+            public void TestPersonaleName()
             {
                 //Arrange
                 PersonaleCatalog personaleCatalog = new PersonaleCatalog();
@@ -23,7 +23,7 @@ namespace UnitTestProject2
 
 
             [TestMethod]
-            public void TestKundeAdresse()
+            public void TestPersonaledresse()
             {
                 //Arrange
                 PersonaleCatalog personaleCatalog = new PersonaleCatalog();
@@ -37,7 +37,7 @@ namespace UnitTestProject2
             }
 
             [TestMethod]
-            public void TestKundeNummer()
+            public void TestPersonaleNummer()
             {
                 //Arrange
                 PersonaleCatalog personaleCatalog = new PersonaleCatalog();
