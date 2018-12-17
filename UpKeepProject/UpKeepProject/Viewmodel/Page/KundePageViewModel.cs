@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Windows.UI.Xaml.Controls;
 using UpKeepProject.Viewmodel.Base;
@@ -15,9 +16,13 @@ namespace UpKeepProject.Viewmodel.Page
             _fliterText = "";
         }
 
-        public IEnumerable<KundeDataViewModel> FliterItemCollection
+        public override ObservableCollection<KundeDataViewModel> ItemCollection
         {
-            get { return ItemCollection.Where(item => item.Name.ToLower().StartsWith(_fliterText.ToLower())); }
+            get
+            {
+                return new ObservableCollection<KundeDataViewModel>(
+                    base.ItemCollection.Where(item => item.Name.ToLower().StartsWith(_fliterText.ToLower())));
+            }
         }
 
         public string FliterText
@@ -27,7 +32,7 @@ namespace UpKeepProject.Viewmodel.Page
             {
                 _fliterText = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(FliterItemCollection));
+                OnPropertyChanged(nameof(ItemCollection));
             }
         }
 

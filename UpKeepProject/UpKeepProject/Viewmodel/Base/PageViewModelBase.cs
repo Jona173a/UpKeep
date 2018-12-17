@@ -30,7 +30,7 @@ namespace UpKeepProject.Viewmodel.Base
             _catalog.CatalogChanged += OnCatalogHasChanged;
         }
     
-        public ObservableCollection<TDataViewModel> ItemCollection
+        public virtual ObservableCollection<TDataViewModel> ItemCollection
         {
             get
             {
