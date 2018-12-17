@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpKeepProject", "UpKeepProject\UpKeepProject.csproj", "{73A04A9A-0889-4106-B45A-F9F62D9F1BDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject2", "UnitTestProject2\UnitTestProject2.csproj", "{256F0F0B-C062-4F8B-9191-AA2EF248D514}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestUpKeep", "UnitTestProject2\UnitTestUpKeep.csproj", "{256F0F0B-C062-4F8B-9191-AA2EF248D514}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
