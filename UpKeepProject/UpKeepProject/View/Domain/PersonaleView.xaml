@@ -110,7 +110,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1" Grid.Row="0">
                 <TextBox Text="{Binding FliterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                         PlaceholderText="Søg" 
+                         PlaceholderText="Søg på navn" 
                          MinWidth="200"
                          TextAlignment="Left" 
                          Height="40" Width="120"
