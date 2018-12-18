@@ -9,13 +9,10 @@ namespace UpKeepProject.Model.Base
     public interface ICatalog<T>
     {
         List<T> All { get; }
-
         void Create(T obj);
-
         T Read(int id);
-
+        void Update(int id, T obj);
         void Delete(int id);
-
         event Action<int> CatalogChanged;
     }
 }

@@ -1,0 +1,6 @@
+﻿Programmet Crasher når der er to personer der tilføjer noget på samme tid 
+
+Icon kunne adde ved PageViewModelAppBase under commanders
+
+Spørger om Id problem
+

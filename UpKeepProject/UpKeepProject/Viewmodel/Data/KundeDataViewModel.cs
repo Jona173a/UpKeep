@@ -1,13 +1,20 @@
-﻿using UpKeepProject.Viewmodel.Base;
+﻿using System.Runtime.Serialization.Formatters;
+using UpKeepProject.Command;
+using UpKeepProject.Viewmodel.Base;
 
 namespace UpKeepProject.Viewmodel
 {
     public class KundeDataViewModel : DataViewModelAppBase<Kunde>
     {
-        public KundeDataViewModel() { }
 
-        public KundeDataViewModel(Kunde dataObject) : base(dataObject)
+        public int Id
         {
+            get { return DataObject().Id; }
+            set
+            {
+                DataObject().Id = value;
+                OnPropertyChanged();
+            }
         }
 
         public string Name
@@ -30,21 +37,22 @@ namespace UpKeepProject.Viewmodel
             }
         }
 
-        public string Nummer
+        public int Nummer
         {
-            get { return DataObject().Adresse; }
+            get { return DataObject().Nummer; }
             set
             {
-                DataObject().Adresse = value;
+                DataObject().Nummer = value;
                 OnPropertyChanged();
             }
         }
 
+        
 
 
         protected override string ItemDescription
         {
-            get { return $"{Name} {Adresse} {Nummer}"; }
+            get { return $"{Id} {Name} {Adresse} {Nummer}"; }
         }
 
     }

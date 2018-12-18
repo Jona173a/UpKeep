@@ -8,5 +8,8 @@
 
         IDomainClass Copy();
 
+        void CopyValuesFrom(IDomainClass obj);
+
+
     }
 }

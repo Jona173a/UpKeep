@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using UpKeepProject.Command;
+using System.Net.Mime;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
+using UpKeepProject.Command.App;
 using UpKeepProject.Command.Base;
 using UpKeepProject.Data.Base;
 using UpKeepProject.Model.App;
 using UpKeepProject.Model.Base;
+using UpKeepProject.Command;
 
 namespace UpKeepProject.Viewmodel.Base
 {
@@ -26,18 +30,18 @@ namespace UpKeepProject.Viewmodel.Base
             CommandBase setUpdateViewStateCmd = new SetViewStateCommand<TDataViewModel>(this, PageViewModelState.Update);
 
             Dictionary<string, CommandBase> readDeleteCommands = new Dictionary<string, CommandBase>();
-            readDeleteCommands.Add("Create...", setCreateViewStateCmd);
-            readDeleteCommands.Add("Update...", setUpdateViewStateCmd);
+            readDeleteCommands.Add("Create", setCreateViewStateCmd);
+            readDeleteCommands.Add("Update", setUpdateViewStateCmd);
             readDeleteCommands.Add("Delete", deleteCmd);
 
             Dictionary<string, CommandBase> createCommands = new Dictionary<string, CommandBase>();
-            createCommands.Add("Read/Delete...", setReadDeleteViewStateCmd);
+            createCommands.Add("Read/Delete", setReadDeleteViewStateCmd);
             createCommands.Add("New", setCreateViewStateCmd);
             createCommands.Add("Save", createCmd);
 
             Dictionary<string, CommandBase> updateCommands = new Dictionary<string, CommandBase>();
-            updateCommands.Add("Read/Delete...", setReadDeleteViewStateCmd);
-            updateCommands.Add("Create...", setCreateViewStateCmd);
+            updateCommands.Add("Read/Delete", setReadDeleteViewStateCmd);
+            updateCommands.Add("Create", setCreateViewStateCmd) ;
             updateCommands.Add("Update", updateCmd);
 
             _allCommands = new Dictionary<PageViewModelState, Dictionary<string, CommandBase>>();
@@ -49,6 +53,7 @@ namespace UpKeepProject.Viewmodel.Base
 
             SetState(PageViewModelState.ReadDelete);
         }
+
 
         public List<string> ViewCommandsDesc
         {
@@ -70,6 +75,19 @@ namespace UpKeepProject.Viewmodel.Base
                 if (_state == PageViewModelState.Update) header += "Update";
                 return header;
             }
+        }
+
+        public void ChangedState()
+        {
+            if (_state == PageViewModelState.ReadDelete)
+            {
+
+            }
+        }
+
+        public SolidColorBrush BackgroundColorDetails
+        {
+            get { return new SolidColorBrush(EnabledStateDetails ? Colors.White : Colors.GhostWhite); }
         }
 
         private Dictionary<string, CommandBase> CurrentCommands
