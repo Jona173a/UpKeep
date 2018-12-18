@@ -12,6 +12,8 @@
         <local:KundePageViewModel/>
     </Page.DataContext>
 
+    
+
     <!--#region Resources-->
     <Page.Resources>
         <Style x:Key="TextBlockStateStyle" TargetType="TextBlock">
@@ -58,8 +60,10 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height=".75*"/>
+            <RowDefinition Height=".3*"/>
             <RowDefinition Height=".2*"/>
-            <RowDefinition Height="3*"/>
+
+            <RowDefinition Height="2.9*"/>
             <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
 
@@ -100,8 +104,27 @@
         </Grid>
         <!--#endregion-->
 
-        <!--#region Middel Part Text-->
+        <!--#region Søgefunktion-->
         <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="0">
+                <TextBox Text="{Binding FliterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         PlaceholderText="Søg på navn" 
+                         MinWidth="200"
+                         TextAlignment="Left" 
+                         Height="40" Width="120"
+                         FontSize="22"
+                         Margin="60,5,0,0"
+                />
+            </StackPanel>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Middel Part Text-->
+        <Grid Grid.Column="0" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".5*"/>
                 <ColumnDefinition Width="5*"/>
@@ -139,7 +162,7 @@
         <!--#endregion-->
 
         <!--#region Middel Part-->
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="3">
             <Grid Grid.Column="0" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".5*"/>
@@ -148,8 +171,11 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
 
+
+
                 <!-- ID Data -->
                 <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                   
                     <ListView
                     ItemsSource="{Binding ItemCollection}"
                     SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
@@ -162,6 +188,8 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
+
+                
 
                 <!-- Name Data -->
                 <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
@@ -212,7 +240,7 @@
         <!--#endregion-->
 
         <!--#region Bottom Part-->
-        <Grid Grid.Column="0" Grid.Row="3">
+        <Grid Grid.Column="0" Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="2*"/>
